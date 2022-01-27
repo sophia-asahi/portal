@@ -1,0 +1,36 @@
+{% extends 'student/base.html' %}
+{% block content%}
+<title>details</title>
+<div class="container text-center">
+     <h1><b> Welcome {{ username }} </b></h1>
+
+      {{ first_name }} {{ last_name }} {{ department }} {{ cgpa }} {{ age }}  {{ address }}
+<div class="pic">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoi8QL_86FfBXa38HVKR1OBAdGWUTHlrgCJQ&usqp=CAU">
+</div>
+
+   <div class="space2">
+   <table  style="width:1100px;height:150px; border: 8px solid black">
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+         <th>Department</th>
+        <th>Cgpa</th>
+        <th>Age</th>
+        <th>Address</th>
+    </tr>
+     {% for student in students %}
+     <tr>
+         <td>{{ student.first_name }}</td>
+         <td>{{ student.last_name }}</td>
+         <td>{{ student.department }}</td>
+         <td>{{ student.cgpa }}</td>
+         <td>{{ student.age }}</td>
+         <td>{{ student.address }}</td>
+     </tr>
+     {% endfor %}
+ </table>
+   </div>
+</div>
+{% endblock %}
+

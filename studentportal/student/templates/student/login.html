@@ -1,0 +1,48 @@
+{% extends 'student/base.html' %}
+{% block content%}
+
+     <title>Login</title>
+
+
+           <div class="mx-auto" style="width: 500px;">
+               <div class="container text-center">
+               <div class="pic1">
+               <img src="https://bps.bect.in/wp-content/uploads/2021/03/unnamed.png"></img>
+
+            </div>
+            <div class="form-group">
+          <form method="POST">
+             {% csrf_token %}
+
+           <div class="pic1">
+           <table style="width:550px;height:100px; border: 5px solid black">
+              <tr>
+                 <td>Username</td>
+                 <td><input type="text" placeholder="Enter the Username.." name="username" required /></td>
+              </tr>
+               <tr>
+                   <td>Password</td>
+                   <td><input type="password" placeholder="Enter the Password.." name="pwd" required /></td>
+               </tr>
+            </table>
+          </div>
+              </div>
+
+
+
+               <div class="container text-center">
+               <input type="submit" style="background-color:black;color:white;width:150px;height:40px;" value="Login"/>
+
+          {% if messages %}
+             {% for result in messages %}
+               {{ result }}
+             {% endfor %}
+          {% endif %}
+
+
+               </div>
+     </form>
+         </div>
+</div>
+
+{% endblock %}

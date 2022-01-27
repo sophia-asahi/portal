@@ -1,0 +1,97 @@
+.bgc{
+   background-color: #f8ceec;
+   background-image: linear-gradient(315deg, #a88beb 0%, #f8ceec 90%);
+   padding:50px;
+}
+
+@keyframes fadeBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(200%);
+ }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+  }
+}
+
+
+.size{
+ font-size:500%;
+}
+.pic{
+  padding:12px;
+  animation-name:fadeBounce;
+  animation-duration:1s;
+}
+
+/* SHIFT */
+nav.shift ul li a {
+  position:relative;
+  z-index: 1;
+}
+nav.shift ul li a:hover {
+  color: #000000;
+}
+nav.shift ul li a:after {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  width: 100%;
+  height: 0px;
+  content: '.';
+  color: transparent;
+  background:#CD97E2;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+}
+nav.shift ul li a:hover:after {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+.btn-shine{
+  position: absolute;
+  left:50%;
+  transform: translate(-50%,-50%);
+  padding:50px;
+  color: #f8ceec;
+  background: linear-gradient(to right, #272727 0, white 10%, #272727 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 1s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 'bold';
+  align-self:'center';
+
+
+  text-decoration: none;
+  white-space: nowrap;
+
+}
+@keyframes shine{
+  0%{
+    background-position: 0;
+  }
+  100%{
+    background-position: 250px;
+  }
+}
+.space{
+padding:74px;
+}
+
+.pic1{
+padding:21px;
+}
+.space2{
+padding:12.5px;
+}
