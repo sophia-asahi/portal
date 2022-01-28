@@ -1,12 +1,8 @@
 {% extends 'student/index.html' %}
-
-
 {% block content%}
-
 <html>
 <head>
     <title>Register</title>
-
 </head>
 <body style="  justify-content: center; align-items: center;text-align: center">
      <h1 class="btn-shine" >REGISTER</h1>
@@ -14,32 +10,31 @@
       {% csrf_token %}
 
      <div class="mx-auto" style="width:650px;">
-<div class="space">
-    <table style=" width: 500px; border:5px solid black">
-        <tr>
-         <td>Username</td>
-         <td><input type="text" placeholder="Enter the Username.." name="username" required/></td>
-      </tr>
-      <tr>
-         <td>Password</td>
-         <td><input type="password" placeholder="Enter the Password.." required
-          onchange="form.cpwd.pattern=this.value"  name="pwd"/></td>
-      </tr>
-      <tr>
-         <td>Confirm-password</td>
-         <td><input type="password" placeholder="Enter the Confirm-password.." name="cpwd" pattern="" required/></td>
-      </tr>
-      <tr>
-          <td>First Name</td>
-          <td><input type="text" placeholder="Enter First Name.." name="first_name" required/></td>
-      </tr>
-      <tr>
-
-          <td>Last Name</td>
-          <td><input type="text" placeholder="Enter Last Name.." name="last_name"/></td>
-      </tr>
-      <tr>
-          <td>Department</td>
+           <div class="space">
+             <table style=" width: 500px; border:5px solid black">
+             <tr>
+             <td>Username</td>
+             <td><input type="text" placeholder="Enter the Username.." name="username" required/></td>
+             </tr>
+             <tr>
+             <td>Password</td>
+             <td><input type="password" placeholder="Enter the Password.." required
+                 onchange="form.cpwd.pattern=this.value"  name="pwd"/></td>
+             </tr>
+             <tr>
+             <td>Confirm-password</td>
+             <td><input type="password" placeholder="Enter the Confirm-password.." name="cpwd" pattern="" required/></td>
+             </tr>
+             <tr>
+             <td>First Name</td>
+             <td><input type="text" placeholder="Enter First Name.." name="first_name" required/></td>
+             </tr>
+             <tr>
+             <td>Last Name</td>
+             <td><input type="text" placeholder="Enter Last Name.." name="last_name"/></td>
+             </tr>
+             <tr>
+             <td>Department</td>
               <td>
                   <select name="department" required>
                       <option selected disabled="true">--department--</option>
@@ -52,37 +47,29 @@
                       <option value="Bio">Bio</option>
                   </select>
               </td>
-      </tr>
-      <tr>
-           <td>Cgpa</td>
-           <td><input type="number" placeholder="Enter Cgpa.." name="cgpa" required/></td>
-      </tr>
-      <tr>
-           <td>Age</td>
-           <td><input type="number" placeholder="Enter Age.." name="age"/></td>
-      </tr>
-      <tr>
-           <td>Address</td>
-           <td><input type="text" placeholder="Enter Address.." name="address" required/></td>
-      </tr>
-   </table>
+             </tr>
+              <tr>
+              <td>Cgpa</td>
+               <td><input type="number" placeholder="Enter Cgpa.." name="cgpa" required/></td>
+               </tr>
+               <tr>
+               <td>Age</td>
+               <td><input type="number" placeholder="Enter Age.." name="age"/></td>
+               </tr>
+               <tr>
+               <td>Address</td>
+               <td><input type="text" placeholder="Enter Address.." name="address" required/></td>
+               </tr>
+             </table>
          </div>
      </div>
-
-
-      <input type="submit" style="background-color:black;color:white;width:150px;height:40px;" value="Register">
+     <input type="submit" style="background-color:black;color:white;width:150px;height:40px;" value="Register">
 
       {% if messages %}
         {% for result in messages %}
            {{ result }}
         {% endfor %}
       {% endif %}
-
-
-
- </form>
-
-
+     </form>
 </body>
-
 {% endblock %}

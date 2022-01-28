@@ -11,7 +11,6 @@ def home(request):
 
 def register(request):
     if request.method == 'POST':
-
         saverecord = Signup()
         saverecord.username = request.POST.get('username')
         saverecord.pwd = request.POST.get('pwd')
@@ -69,7 +68,7 @@ def login(request):
     return render(request, 'student/login.html')
 
 def current(request):
-    students = Signup.object.filter(record)
+    students = Signup.object.filter(record)#{"first_name":first_name"}..
     return render (request,'student/details.html',{"students":students})
 
 def logout(request):
