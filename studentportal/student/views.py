@@ -25,7 +25,8 @@ def register(request):
         return render(request, 'student/register.html')
 
     else:
-        # return redirect('home')
+        # return re
+
         return render(request, 'student/register.html')
 
 
@@ -49,13 +50,6 @@ def login(request):
         cursor.execute(sqlcommand)
          #cursor.execute(sqlcommand1)
         record = cursor.fetchone()
-        print(record)
-        first_name = postParams.get('first_name')
-        last_name = postParams.get('last_name')
-        department = postParams.get('department')
-        cgpa = postParams.get('cgpa')
-        age = postParams.get('age')
-        address = postParams.get('address')
          #con1 =  mysql.connector.connect(host = "localhost",user="root",password = "Asahi@123",database="studentportal",auth_plugin='mysql_native_password')
          #cursor = con1.cursor(buffered=True)
          #check if record is null/None and if yes, then show that the credentials are wrong
@@ -63,13 +57,22 @@ def login(request):
         if record == None:
              return redirect("login")
         else:
-            return render(request, 'student/details.html', {"username": username})
+            print(record)
+            # new student obj
+            saverecord.first_name = record.first_name
+            saverecord.last_name = record.last_name
+            saverecord.department = record.department
+            saverecord.cgpa = record.cgpa
+            saverecord.age = record.age
+            saverecord.address = record.address
+
+            return render(request, 'student/details.html', {'saverecord': record})
 
     return render(request, 'student/login.html')
 
 def current(request):
-    students = Signup.object.filter(record)#{"first_name":first_name"}..
-    return render (request,'student/details.html',{"students":students})
+#     students = Signup.object.filter(record)#{"first_name":first_name"}..
+   return render (request,'student/details.html')
 
 def logout(request):
     return redirect('home')

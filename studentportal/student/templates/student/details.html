@@ -2,7 +2,7 @@
 {% block content%}
 <title>details</title>
 <div class="container text-center">
-     <h1><b> Welcome {{ username }} </b></h1>
+     <h1><b> Welcome {{ saverecord.first_name }} </b></h1>
 
 <div class="pic">
 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoi8QL_86FfBXa38HVKR1OBAdGWUTHlrgCJQ&usqp=CAU">
@@ -18,16 +18,14 @@
         <th>Age</th>
         <th>Address</th>
     </tr>
-     {% for student in students %}
      <tr>
-         <td>{{ student.first_name }}</td>
-         <td>{{ student.last_name }}</td>
-         <td>{{ student.department }}</td>
-         <td>{{ student.cgpa }}</td>
-         <td>{{ student.age }}</td>
-         <td>{{ student.address }}</td>
+         <td>{{ saverecord.first_name }}</td>
+         <td>{{ saverecord.last_name }}</td>
+         <td>{{ saverecord.department }}</td>
+         <td>{{ saverecord.cgpa }}</td>
+         <td>{{ saverecord.age }}</td>
+         <td>{{ saverecord.address }}</td>
      </tr>
-     {% endfor %}
  </table>
    </div>
 </div>
