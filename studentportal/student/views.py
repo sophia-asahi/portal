@@ -26,17 +26,13 @@ def register(request):
 
     else:
         # return re
-
-        return render(request, 'student/register.html')
+       return render(request, 'student/register.html')
 
 
 def login(request):
     # if request.method == "POST":
     #     username = request.POST('username')
     #     pwd = request.POST('pwd')
-    #
-    #
-
     #postParams = {}
     if request.method == "POST":
         postParams = request.POST
@@ -46,33 +42,32 @@ def login(request):
         username = postParams['username']
         pwd = postParams['pwd']
         sqlcommand = "select * from student_signup where username='" + username + "' and pwd='" + pwd + "'"
-         #sqlcommand1 = "select pwd from student_signup"
+
         cursor.execute(sqlcommand)
-         #cursor.execute(sqlcommand1)
+
         record = cursor.fetchone()
-         #con1 =  mysql.connector.connect(host = "localhost",user="root",password = "Asahi@123",database="studentportal",auth_plugin='mysql_native_password')
-         #cursor = con1.cursor(buffered=True)
-         #check if record is null/None and if yes, then show that the credentials are wrong
-         #if it returns a valid record (that is basically the student id), then return to home page with the complete user details (send the record object to home page)
+
         if record == None:
-             return redirect("login")
+            return render(request, 'student/login.html')
+
         else:
             print(record)
-            # new student obj
-            saverecord.first_name = record.first_name
-            saverecord.last_name = record.last_name
-            saverecord.department = record.department
-            saverecord.cgpa = record.cgpa
-            saverecord.age = record.age
-            saverecord.address = record.address
-
+            saverecord = Signup()   # filter,() ,all -same output
+            saverecord.first_name = record[3]
+            saverecord.last_name = record[4]
+            saverecord.department = record[5]
+            saverecord.cgpa = record[6]
+            saverecord.age = record[7]
+            saverecord.address = record[8]
             return render(request, 'student/details.html', {'saverecord': record})
+
 
     return render(request, 'student/login.html')
 
-def current(request):
-#     students = Signup.object.filter(record)#{"first_name":first_name"}..
-   return render (request,'student/details.html')
+
+def details(request):
+    return request('student/details.html')
+
 
 def logout(request):
     return redirect('home')
