@@ -52,20 +52,20 @@ def login(request):
 
         else:
             print(record)
-            saverecord = Signup()   # filter,() ,all -same output
+            saverecord = Signup()  # filter,() ,all -same output
             saverecord.first_name = record[3]
             saverecord.last_name = record[4]
             saverecord.department = record[5]
             saverecord.cgpa = record[6]
             saverecord.age = record[7]
             saverecord.address = record[8]
-            return render(request, 'student/details.html', {"saverecord":saverecord})
+            return render(request, 'student/details.html', {"saverecord": saverecord})
 
     return render(request, 'student/login.html')
 
 
 def details(request):
-    return request('student/details.html')
+     return request('student/details.html')
 
 
 def logout(request):
