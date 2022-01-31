@@ -59,8 +59,7 @@ def login(request):
             saverecord.cgpa = record[6]
             saverecord.age = record[7]
             saverecord.address = record[8]
-            return render(request, 'student/details.html', {'saverecord': record})
-
+            return render(request, 'student/details.html', {"saverecord":saverecord})
 
     return render(request, 'student/login.html')
 
