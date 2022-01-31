@@ -52,7 +52,7 @@ def login(request):
 
         else:
             print(record)
-            saverecord = Signup()  # filter,() ,all -same output
+            saverecord = Signup()
             saverecord.first_name = record[3]
             saverecord.last_name = record[4]
             saverecord.department = record[5]
