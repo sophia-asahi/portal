@@ -64,8 +64,6 @@ def login(request):
     return render(request, 'student/login.html')
 
 
-def details(request):
-     return request('student/details.html')
 
 
 def logout(request):
