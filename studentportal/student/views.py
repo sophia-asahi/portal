@@ -53,12 +53,12 @@ def login(request):
         else:
             print(record)
             saverecord = Signup()
-            saverecord.first_name = record[3]
-            saverecord.last_name = record[4]
-            saverecord.department = record[5]
-            saverecord.cgpa = record[6]
-            saverecord.age = record[7]
-            saverecord.address = record[8]
+            saverecord.first_name = record[2]
+            saverecord.last_name = record[3]
+            saverecord.department = record[4]
+            saverecord.cgpa = record[5]
+            saverecord.age = record[6]
+            saverecord.address = record[7]
             return render(request, 'student/details.html', {"saverecord": saverecord})
 
     return render(request, 'student/login.html')
